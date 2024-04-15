@@ -1,0 +1,320 @@
+{
+    "querySubject" : [
+        {
+            "name": "SalesOrder",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "customerId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "employeeId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "orderDate",
+                    "type": "attribute"
+                },
+                {
+                    "name": "requiredDate",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shippedDate",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipperId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "freight",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipAddress",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipCity",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipRegion",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipPostalCode",
+                    "type": "attribute"
+                },
+                {
+                    "name": "shipCountry",
+                    "type": "attribute"
+                }
+            ]
+        },
+        {
+            "name": "Shipper",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "companyName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "phone",
+                    "type": "attribute"                   
+                }
+            ]
+        },
+        {
+            "name": "OrderDetail",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "orderId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "productId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "unitPrice",
+                    "type": "attribute"
+                },
+                {
+                    "name": "quantity",
+                    "type": "fact"
+                },
+                {
+                    "name": "discount",
+                    "type": "attribute"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "supplierId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "categoryId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "productName",
+                    "type": "attribute"
+                }, 
+                {
+                    "name": "quantityPerUnit",
+                    "type": "attribute"
+                },                                 
+                {
+                    "name": "unitPrice",
+                    "type": "attribute"
+                },                
+                {
+                    "name": "unitPrice",
+                    "type": "attribute"
+                },
+                {
+                    "name": "unitsInStock",
+                    "type": "attribute"
+                },
+                {
+                    "name": "unitsInOrder",
+                    "type": "attribute"
+                },                                
+                {
+                    "name": "reoderLevel",
+                    "type": "attribute"
+                },
+                {
+                    "name": "discontinued",
+                    "type": "attribute"
+                }
+            ]           
+        },
+        {
+            "name": "Category",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "categoryName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "description",
+                    "type": "attribute"
+                },
+                {
+                    "name": "picture",
+                    "type": "attribute"
+                }
+            ]
+        },
+        {
+            "name": "Supplier",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "companyName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "contractName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "contactTitle",
+                    "type": "attribute"
+                },
+                {
+                    "name": "address",
+                    "type": "attribute"
+                },
+                {
+                    "name": "city",
+                    "type": "attribute"
+                },                
+                {
+                    "name": "region",
+                    "type": "attribute"
+                },
+                {
+                    "name": "postalCode",
+                    "type": "attribute"
+                },
+                {
+                    "name": "country",
+                    "type": "attribute"
+                },
+                {
+                    "name": "phone",
+                    "type": "attribute"
+                },
+                {
+                    "name": "email",
+                    "type": "attribute"
+                },
+                {
+                    "name": "fax",
+                    "type": "attribute"
+                },
+                {
+                    "name": "HomePage",
+                    "type": "attribute"
+                }
+            ]
+        },
+        {
+            "name": "Customer",
+            "queryItem": [
+                {
+                    "name": "entityId",
+                    "type": "identitifer"
+                },
+                {
+                    "name": "companyName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "contractName",
+                    "type": "attribute"
+                },
+                {
+                    "name": "contactTitle",
+                    "type": "attribute"
+                },
+                {
+                    "name": "address",
+                    "type": "attribute"
+                },
+                {
+                    "name": "city",
+                    "type": "attribute"
+                },                
+                {
+                    "name": "region",
+                    "type": "attribute"
+                },
+                {
+                    "name": "postalCode",
+                    "type": "attribute"
+                },
+                {
+                    "name": "country",
+                    "type": "attribute"
+                },
+                {
+                    "name": "phone",
+                    "type": "attribute"
+                },
+                {
+                    "name": "mobile",
+                    "type": "attribute"
+                },
+                {
+                    "name": "email",
+                    "type": "attribute"
+                },
+                {
+                    "name": "fax",
+                    "type": "attribute"
+                }
+            ]       
+        }                           
+    ]
+}
+
+/*
+SELECT t1.entityId,
+       t1.customerId,
+       t1.employeeId,
+       t1.orderDate,
+       t1.requiredDate,
+       t1.shippedDate,
+       t1.shipperId,
+       t1.freight,
+       t1.shipName,
+       t1.shipAddress,
+       t1.shipCity,
+       t1.shipRegion,
+       t1.shipPostalCode,
+       t1.shipCountry,
+       t2.entityId,
+       t2.orderId,
+       t2.productId,
+       t2.unitPrice,
+       t2.quantity,
+       t2.discount
+  FROM SalesOrder t1
+  RIGHT INNER JOIN OrderDetail t2 ON t1.entityId = t2.orderId
+*/
