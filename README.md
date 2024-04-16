@@ -9,4 +9,9 @@ Currently, two official plugins are available:
 
 
 
-https://www.bezkoder.com/react-table-example-hooks-crud/#Add_Navbar_to_React_Table_CRUD_App
+https://www.bezkoder.com/react-table-example-hooks-crud/#Add_Navbar_to_React_Table_CRUD_App <br/>
+
+<br/>
+
+ICONS <br/>
+https://github.com/jujum4n/sgi-enhanced/tree/master <br/>
