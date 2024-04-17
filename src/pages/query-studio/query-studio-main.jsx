@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, Tree, Typography, Empty, } from 'antd';
-import QueryStudioDatasource from './QueryStudioDatasource';
+import QueryStudioDatasource from './query-studio-datasource';
 
 const tabs = [
     {

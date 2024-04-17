@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Layout, version, } from 'antd';
 
-import QueryStudioMain from './pages/query-studio/QueryStudioMain';
+import QueryStudioMain from './pages/query-studio/query-studio-main';
 
 const { Header, Content } = Layout;
 
