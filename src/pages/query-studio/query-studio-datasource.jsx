@@ -1,5 +1,21 @@
 import React from 'react';
-import { Tree, Typography, Empty, Divider, Card, Layout } from 'antd';
+import { 
+    Tree, 
+    Typography, 
+    Empty, 
+    Divider, 
+    Card, 
+    Layout 
+} from 'antd';
+import {
+    HomeOutlined,
+    LoadingOutlined,
+    SettingFilled,
+    SmileOutlined,
+    SyncOutlined,
+    FolderOutlined,
+    FieldStringOutlined,
+  } from '@ant-design/icons';
 
 const { Header, Sider } = Layout;
 const { Text } = Typography;
@@ -8,63 +24,43 @@ const treeData = [
     {
         title: <Text strong>Products (query)</Text>,
         key: 'products',
+        icon: <FolderOutlined/>,
         disableCheckbox: true,
         children: [
             {
                 title: 'Product line',
-                key: 'products-line'
+                key: 'products-line',
+                icon: <FieldStringOutlined />,
             },
             {
                 title: 'Product type',
-                key: 'products-type'
+                key: 'products-type',
+                icon: <FieldStringOutlined />,
             },            
             {
                 title: 'Product',
-                key: 'products-product'
+                key: 'products-product',
+                icon: <FieldStringOutlined />,
             }, 
             {
                 title: 'Product color',
-                key: 'products-color'
+                key: 'products-color',
+                icon: <FieldStringOutlined />,
             }, 
             {
                 title: 'Product size',
-                key: 'products-size'
+                key: 'products-size',
+                icon: <FieldStringOutlined />,
             }, 
             {
                 title: 'Product brand',
-                key: 'products-brand'
+                key: 'products-brand',
+                icon: <FieldStringOutlined />,
             }
         ],
     },
 ];
 
-const tabs = [
-    {
-        key: '1',
-        label: 'Data Source',
-        children: <><Tree defaultExpandAll={true} checkable treeData={treeData}/><Empty /></>
-    },
-    {
-        key: '2',
-        label: 'Variables',
-        children: 'Content of Tab Pane 2',
-    },
-    {
-        key: '3',
-        label: 'Maps',
-        children: 'Content of Tab Pane 3',
-    },
-    {
-        key: '4',
-        label: 'Advanced',
-        children: 'Content of Tab Pane 4',
-    },
-    {
-        key: '5',
-        label: 'Schedule',
-        children: 'Content of Tab Pane 5',
-    },        
-];
 
 const contentStyle = {
     textAlign: 'left',
@@ -78,14 +74,25 @@ const siderStyle = {
 
 const QueryStudioDatasource = () => {
 
-    const onChange = (key) => {
-        console.log(key);
+    const onCheck = (keys, e) => {
+        console.log(keys);
+        alert(keys);
+        console.log(JSON.stringify(e, null, 4));
     };
+
+    const onSelect = () => {
+        console.log('onSelect');
+    }
+
+    const onRightClick = ({event, node}) => {
+        console.log('onRightClick');
+        console.log(JSON.stringify(node, null, 4));
+    }
 
     return (
         <Layout>
             <Sider width='450px' style={siderStyle}>
-                <Tree defaultExpandAll={true} checkable treeData={treeData}/>
+                <Tree defaultExpandAll={true} showIcon checkable treeData={treeData} onCheck={onCheck} onRightClick={onRightClick}/>
             </Sider>
             <Layout style={contentStyle}>
                 <pre>{JSON.stringify(treeData, null, 4)}</pre>
