@@ -48,7 +48,7 @@ const QueryStudioMain = () => {
 
     return (
         <div style={contentStyle}>
-            <Tabs defaultActiveKey="1" items={tabs} onChange={onChange} />
+            <Tabs defaultActiveKey="1" items={tabs} onChange={onChange} /> 
         </div>    
     )
 }
