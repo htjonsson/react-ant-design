@@ -50,7 +50,7 @@ const areas = [
     },                      
 ];
 
-const ImageWithMap = (props) => {
+const ImageWithMap = () => {
 
     const imageStyle = {
         display: 'inline',
@@ -68,7 +68,7 @@ const ImageWithMap = (props) => {
         <div>
             <img src={svgImage} useMap="#image-map" width="1031" height="608" style={imageStyle}/>
             <map name="image-map" style={mapStyle}>
-                {props.areas.map((data) => (
+                {areas.map((data) => (
                     <area key={data.id} id={data.id} name={data.title} target="_self" alt={data.title} title={data.title} href="" coords={data.coords} shape="rect" onClick={e => onClick_Area(e)} /> 
                 ))}
             </map>
