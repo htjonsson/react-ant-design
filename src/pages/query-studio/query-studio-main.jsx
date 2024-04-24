@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, Tree, Typography, Empty, } from 'antd';
 import QueryStudioDatasource from './query-studio-datasource';
+import QueryStudioDragNDrop from './query-studio-drag-n-drop';
 
 const tabs = [
     {
@@ -27,7 +28,12 @@ const tabs = [
         key: '5',
         label: 'Schedule',
         children: 'Content of Tab Pane 5',
-    },        
+    },  
+    {
+        key: '6',
+        label: 'Drag And Drop',
+        children: <QueryStudioDragNDrop/>,
+    },              
 ];
 
 const contentStyle = {
