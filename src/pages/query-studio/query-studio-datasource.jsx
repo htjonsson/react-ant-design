@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
     Tree, 
     Typography, 
@@ -16,10 +16,11 @@ import {
     FolderOutlined,
     FieldStringOutlined,
 } from '@ant-design/icons';
-import ImageWithMap from '../../components/image-with-map';
+import QueryStudioTable from '../../components/query-studio-table';
+
 
 const { Header, Sider } = Layout;
-const { Text } = Typography;
+const { Text, Title, } = Typography;
 
 const treeData = [
     {
@@ -62,6 +63,50 @@ const treeData = [
     },
 ];
 
+const metaData = [
+    {
+        title: 'Product line',
+        key: 'products-line',
+        type: 'string',
+        className: 'query-studio-text',
+        placeholder: 'xxxxxxxxxxxxx',
+    },
+    {
+        title: 'Product type',
+        key: 'products-type',
+        type: 'string',
+        className: 'query-studio-text',
+        placeholder: 'xxxxxxxxxxxxx',
+    },            
+    {
+        title: 'Product',
+        key: 'products-product',
+        type: 'string',
+        className: 'query-studio-text',
+        placeholder: 'xxxxxxxxxxxxx',
+    }, 
+    {
+        title: 'Product color',
+        key: 'products-color',
+        type: 'date',
+        className: 'query-studio-text',
+        placeholder: 'dd-mm-yyyy',
+    }, 
+    {
+        title: 'Product size',
+        key: 'products-size',
+        type: 'number',
+        className: 'query-studio-number',
+        placeholder: 'x,xxx,xxx.xx',
+    }, 
+    {
+        title: 'Product brand',
+        key: 'products-brand',
+        type: 'string',
+        className: 'query-studio-text',
+        placeholder: 'xxxxxxxxxxxxx',
+    }    
+];
 
 const contentStyle = {
     textAlign: 'left',
@@ -75,11 +120,26 @@ const siderStyle = {
 };
 
 const QueryStudioDatasource = () => {
+    const [columns, setColumns] = useState([]);
+    const {title, setTitle} = useState("Title");
+    const {subtitle, setSubtitle} = useState("Subtitle");
+
+    const ModifyColumns = (key, isAdd) => {
+        // Add or remove the columns depending what is checked
+        if (isAdd === true) {
+            var found = metaData.find(el => el.key === key);
+            if (found) {
+                setColumns([...columns, found]);
+            }       
+        }
+        else {
+            setColumns(columns.filter(x => x.key !== key));
+        }       
+    }
 
     const onCheck = (keys, e) => {
-        console.log(keys);
-        alert(keys);
-        console.log(JSON.stringify(e, null, 4));
+        // console.log(JSON.stringify(e, null, 4));
+        ModifyColumns(e.node.key, e.checked);
     };
 
     const onSelect = () => {
@@ -97,7 +157,7 @@ const QueryStudioDatasource = () => {
                 <Tree defaultExpandAll={true} showIcon checkable treeData={treeData} onCheck={onCheck} onRightClick={onRightClick}/>
             </Sider>
             <Layout style={contentStyle}>
-                <ImageWithMap />
+                <QueryStudioTable columns={columns} />
             </Layout>
         </Layout>
     )

@@ -11,6 +11,7 @@ Currently, two official plugins are available:
 
 https://www.bezkoder.com/react-table-example-hooks-crud/#Add_Navbar_to_React_Table_CRUD_App <br/>
 https://www.image-map.net/<br/>
+https://legacy.reactjs.org/docs/typechecking-with-proptypes.html<br/>
 <br/>
 
 ICONS <br/>

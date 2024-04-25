@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs, Tree, Typography, Empty, } from 'antd';
 import QueryStudioDatasource from './query-studio-datasource';
 import QueryStudioDragNDrop from './query-studio-drag-n-drop';
+import QueryStudioMaps from './query-studio-maps';
 
 const tabs = [
     {
@@ -16,21 +17,26 @@ const tabs = [
     },
     {
         key: '3',
-        label: 'Maps',
-        children: 'Content of Tab Pane 3',
-    },
+        label: 'Filter',
+        children: 'Content of Filter Tab Pane' ,
+    },    
     {
         key: '4',
+        label: 'Maps',
+        children: <QueryStudioMaps/>,
+    },
+    {
+        key: '5',
         label: 'Advanced',
         children: 'Content of Tab Pane 4',
     },
     {
-        key: '5',
+        key: '6',
         label: 'Schedule',
         children: 'Content of Tab Pane 5',
     },  
     {
-        key: '6',
+        key: '7',
         label: 'Drag And Drop',
         children: <QueryStudioDragNDrop/>,
     },              
