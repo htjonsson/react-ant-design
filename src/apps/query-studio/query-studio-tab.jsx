@@ -52,7 +52,7 @@ const contentStyle = {
     paddingLeft: '40px'
 };
 
-const QueryStudioMain = () => {
+const QueryStudioTab = () => {
 
     const onChange = (key) => {
         console.log(key);
@@ -65,4 +65,4 @@ const QueryStudioMain = () => {
     )
 }
 
-export default QueryStudioMain
+export default QueryStudioTab

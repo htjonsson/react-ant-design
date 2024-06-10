@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import { Layout, version, } from 'antd';
-
-import QueryStudioTab from './query-studio-tab';
 
 const { Header, Content } = Layout;
 
@@ -14,7 +11,7 @@ const headerStyle = {
     height: 64,
     paddingInline: 48,
     lineHeight: '64px',
-    backgroundColor: '#0958d9',
+    backgroundColor: '#8a09d9',
     
 };
 
@@ -23,18 +20,18 @@ const contentStyle = {
     lineHeight: '120px',
     minHeight: 'calc(100VH - 64px)',
     color: '#fff',
-    backgroundColor: '#4096ff',
+    backgroundColor: 'white',
 };
 
-const QueryStudioApp = () => {
+const DashboardApp = () => {
     return (
         <Layout style={layoutStyle}>
             <Header style={headerStyle}>REACT-ANT-DESIGN - {version}</Header>
             <Content style={contentStyle}>
-                <QueryStudioTab />
+                <div>Dashboard</div>
             </Content>
         </Layout>
     )
 }
 
-export default QueryStudioApp
+export default DashboardApp
