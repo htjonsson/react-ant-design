@@ -1,39 +1,17 @@
-import { useState } from 'react'
-import { Layout, version, } from 'antd';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import QueryStudioMain from './pages/query-studio/query-studio-main';
-
-const { Header, Content } = Layout;
-
-const layoutStyle = {
-};
-
-const headerStyle = {
-    textAlign: 'center',
-    color: '#fff',
-    height: 64,
-    paddingInline: 48,
-    lineHeight: '64px',
-    backgroundColor: '#0958d9',
-    
-};
-
-const contentStyle = {
-    textAlign: 'center',
-    lineHeight: '120px',
-    minHeight: 'calc(100VH - 64px)',
-    color: '#fff',
-    backgroundColor: '#4096ff',
-};
+import QueryStudioApp from './apps/query-studio/query-studio-app';
+import DevelopmentApp from './apps/development/development-app';
 
 const App = () => {
     return (
-        <Layout style={layoutStyle}>
-            <Header style={headerStyle}>REACT-ANT-DESIGN - {version}</Header>
-            <Content style={contentStyle}>
-                <QueryStudioMain />
-            </Content>
-        </Layout>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<QueryStudioApp />} />
+                <Route path='/query' element={<QueryStudioApp />} />
+                <Route path='/devel' element={<DevelopmentApp />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
