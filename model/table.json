@@ -1,0 +1,19 @@
+{
+    "type" : "enum",
+    "id" : "int",
+    "name" : "string",
+    "modified" : "boolean",
+    "versionList" : "string", 
+    "date" : "date",
+    "time" : "time",
+    "compiled" : "boolean"
+}
+
+{
+    "enabled" : "boolean",
+    "fieldNo" : "int",
+    "fieldName" : "string",
+    "dataType" : "enum",
+    "length" : "byte",
+    "description" : "string"
+}
