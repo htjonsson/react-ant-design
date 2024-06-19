@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import QueryStudioApp from './apps/query-studio/query-studio-app';
 import DevelopmentApp from './apps/development/development-app';
 import DashboardApp from './apps/dashboard/dashboard-app';
+import SgiMotifApp from "./apps/sgi-motif/sgi-motif-app";
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
                 <Route path='/dash' element={<DashboardApp />} />
                 <Route path='/query' element={<QueryStudioApp />} />
                 <Route path='/devel' element={<DevelopmentApp />} />
+                <Route path='/sgi' element={<SgiMotifApp />} />
             </Routes>
         </BrowserRouter>
     )
