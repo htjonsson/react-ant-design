@@ -5,19 +5,23 @@ const { Header, Content } = Layout;
 
 const items = [
     {
-        key: '1',
+        key: 'dash',
         label: <Link to="/dash">Dashboard</Link>,
     },
     {
-        key: '2',
+        key: 'query',
         label: (
             <Link to="/query">Query</Link>
         ),
     },
     {
-        key: '3',
+        key: 'devel',
         label: <Link to="/devel">Development</Link>,
     },
+    {
+        key: 'sgi-motif',
+        label: <Link to="/sgi-motif">SGI Motif</Link>,
+    },    
 ];
 
 
@@ -50,6 +54,9 @@ const DashboardApp = () => {
         <Layout style={layoutStyle}>
             <Header style={headerStyle}>
                 REACT-ANT-DESIGN - {version}
+            </Header>
+            <Content style={contentStyle}>
+                <div>Dashboard</div>
                 <Dropdown 
                     menu={{ 
                         items,
@@ -59,12 +66,9 @@ const DashboardApp = () => {
                     arrow={{ pointAtCenter: true, }}
                 >
                     <Space style={{ paddingLeft: 30, }}>
-                        <Button onClick={(e) => {alert(json.stringify(e))}}>Apps</Button>
+                        <Button onClick={(e) => {alert('clicked')}}>Apps</Button>
                     </Space>
                 </Dropdown>
-            </Header>
-            <Content style={contentStyle}>
-                <div>Dashboard</div>
             </Content>
         </Layout>
     )

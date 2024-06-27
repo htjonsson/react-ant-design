@@ -13,7 +13,7 @@ const App = () => {
                 <Route path='/dash' element={<DashboardApp />} />
                 <Route path='/query' element={<QueryStudioApp />} />
                 <Route path='/devel' element={<DevelopmentApp />} />
-                <Route path='/sgi' element={<SgiMotifApp />} />
+                <Route path='/sgi-motif' element={<SgiMotifApp />} />
             </Routes>
         </BrowserRouter>
     )

@@ -1,11 +1,19 @@
 import { useState } from 'react';
-import { Input, Form, Switch, Card, Select, Button, Flex, Space, } from 'antd';
+import { Input, Form, Switch, Card, Select, Button, Flex, Space, Divider, } from 'antd';
 
 const alignmentOptions = [
     {
+        value: 'XmALIGNMENT_LEFT',
+        label: 'XmALIGNMENT_LEFT',
+    },    
+    {
         value: 'XmALIGNMENT_CENTER',
         label: 'XmALIGNMENT_CENTER',
-    }
+    },
+    {
+        value: 'XmALIGNMENT_RIGHT',
+        label: 'XmALIGNMENT_RIGHT',
+    }    
 ];
 
 const labelTypeOptions = [
@@ -19,39 +27,133 @@ const labelTypeOptions = [
     },
 ];
 
-const SgiMotifPushButtonPage = () => {
-    return (
-        <Card>
-            
+const widgetClass = {
+    instanceName: "instanceName",
+    className: "className",
+    resources: [
+        {
+            label: "activateCallback",
+            name: "activateCallback",
+            type: "input",
+            defaultValue: "<activateCallback>"
+        },
+        {
+            label: "alignment",
+            name: "alignment",
+            type: "select",
+            options: [
+                {
+                    value: 'XmALIGNMENT_LEFT',
+                    label: 'XmALIGNMENT_LEFT',
+                },    
+                {
+                    value: 'XmALIGNMENT_CENTER',
+                    label: 'XmALIGNMENT_CENTER',
+                },
+                {
+                    value: 'XmALIGNMENT_RIGHT',
+                    label: 'XmALIGNMENT_RIGHT',
+                }    
+            ],
+            defaultValue: "XmALIGNMENT_CENTER"
+        },
+        {
+            label: "labelPixmap",
+            name: "labelPixmap",
+            type: "input"
+        }, 
+        {
+            label: "labelString",
+            name: "labelString",
+            type: "input"
+        },
+        {
+            label: "labelType",
+            name: "labelType",
+            type: "select",
+            options: [
+                {
+                    value: 'XmSTRING',
+                    label: 'XmSTRING',
+                },
+                {
+                    value: 'XmPIXMAP',
+                    label: 'XmPIXMAP',
+                },
+            ],
+            defaultValue: "XmPIXMAP"
+        },
+        {
+            label: "reomputeSize",
+            name: "reomputeSize",
+            type: "switch",
+            defaultValue: false
+        },                                     
+    ]
+};
 
+const SgiMotifPushButtonPage = () => {
+    const renderResource = (resource) => {
+        switch(resource.type) {
+            case "input":
+                return (
+                    <Form.Item label={resource.label} name={resource.name}>
+                        <Input defaultValue={resource.defaultValue}/>
+                    </Form.Item>                
+                )
+            case "select":
+                return (
+                    <Form.Item label={resource.label} name={resource.name}>
+                        <Select options={resource.options} defaultValue={resource.defaultValue}/>
+                    </Form.Item>                
+                )
+            case "switch":
+                return (
+                    <Form.Item label={resource.label} name={resource.name}>
+                        <Switch style={{float: 'left'}} defaultValue={resource.defaultValue}/>
+                    </Form.Item>                
+                )                                 
+            default:
+                return (
+                    <Form.Item label={resource.label} name={resource.name}>
+                    </Form.Item>                
+                ) 
+        }
+    }
+
+    return (
+        <Card style={{ maxWidth: 600, }}>
             <Form
-                name="instanceForm"
-                labelCol={{ span: 8, }}
-                wrapperCol={{ span: 16, }}
-                style={{ maxWidth: 600, }}
+                name="resources"
+                labelCol={{ span: 6, }}
+                wrapperCol={{ span: 18, }}
                 layout="horizontal"
                 autoComplete="off"
             >
+                <Form.Item style={{float: 'right'}}>
+                    <Flex gap="small" wrap>
+                        <Button type="primary">Save</Button>
+                        <Button>Close</Button>
+                    </Flex>
+                </Form.Item>
+
+                <Divider/>
+
                 <Form.Item label="Instance Name" name="instanceName" >
-                    <Input />
+                    <Input placeholder='widgetClass.instanceName' onChange={alert('instanceName')}/>
                 </Form.Item>
 
                 <Form.Item label="Class Name" name="className" >
-                    <Input />
+                    <Input  placeholder='widgetClass.className'/>
                 </Form.Item>                
 
-            </Form>
+                <Divider/>
 
-            <Space />
+                {widgetClass.resources.map(resource => {
+                    return renderResource(resource);
+                })}
 
-            <Form
-                name="resourceForm"
-                labelCol={{ span: 8, }}
-                wrapperCol={{ span: 16, }}
-                style={{ maxWidth: 600, }}
-                layout="vertical"
-                autoComplete="off"
-            >
+                {/*     
 
                 <Form.Item label="activateCallback" name="activateCallback" >
                     <Input />
@@ -74,17 +176,12 @@ const SgiMotifPushButtonPage = () => {
                 </Form.Item>
 
                 <Form.Item label="reomputeSize" name="reomputeSize" >
-                    <Switch />
+                    <Switch style={{float: 'left'}}/>
                 </Form.Item>
 
-            </Form>       
-        
-            <Space />
+                */}
 
-            <Flex gap="small" wrap>
-                <Button type="primary">Save</Button>
-            </Flex>
-        
+            </Form>               
         </Card>
     )
 }
