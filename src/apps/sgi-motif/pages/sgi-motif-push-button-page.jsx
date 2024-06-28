@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input, Form, Switch, Card, Select, Button, Flex, Space, Divider, } from 'antd';
+import { Input, Form, Switch, Card, Select, Button, Flex, Space, Divider, Radio, } from 'antd';
 
 const alignmentOptions = [
     {
@@ -35,7 +35,7 @@ const widgetClass = {
             label: "activateCallback",
             name: "activateCallback",
             type: "input",
-            defaultValue: "<activateCallback>"
+            placeholder: "<activateCallback>",
         },
         {
             label: "alignment",
@@ -87,18 +87,40 @@ const widgetClass = {
             label: "reomputeSize",
             name: "reomputeSize",
             type: "switch",
-            defaultValue: false
-        },                                     
+            defaultValue: true
+        },
+        {
+            label: "autoRouteCallbacks",
+            name: "autoRouteCallbacks",
+            type: "radio",
+            options: [
+                {
+                  label: 'True',
+                  value: 'true',
+                },
+                {
+                  label: 'False',
+                  value: 'false',
+                },
+            ],
+            defaultValue: 'false'
+        },                                             
     ]
 };
 
 const SgiMotifPushButtonPage = () => {
+    const handleChange = (evt) => {
+        console.log(evt.target.id);
+        console.log(evt.target.value);
+        debugger;
+    }
+
     const renderResource = (resource) => {
         switch(resource.type) {
             case "input":
                 return (
                     <Form.Item label={resource.label} name={resource.name}>
-                        <Input defaultValue={resource.defaultValue}/>
+                        <Input placeholder={resource.placeholder} defaultValue={resource.defaultValue}/>
                     </Form.Item>                
                 )
             case "select":
@@ -110,15 +132,33 @@ const SgiMotifPushButtonPage = () => {
             case "switch":
                 return (
                     <Form.Item label={resource.label} name={resource.name}>
-                        <Switch style={{float: 'left'}} defaultValue={resource.defaultValue}/>
+                        <Switch style={{float: 'left', marginLeft: '16px'}} defaultValue={resource.defaultValue}/>
                     </Form.Item>                
-                )                                 
+                )
+            case "radio":
+                return (
+                    <Form.Item label={resource.label} name={resource.name}>
+                        <Radio.Group style={{float: 'left', paddingLeft: '16px'}} options={resource.options} defaultValue={resource.defaultValue}/>
+                    </Form.Item>                
+                )                                                  
             default:
                 return (
                     <Form.Item label={resource.label} name={resource.name}>
                     </Form.Item>                
                 ) 
         }
+    }
+
+    const handleFieldsChange = (changedFields, allFields) => {
+        debugger;
+    }
+
+    const handleValuesChange = (changedValues, allValues) => {
+        debugger;
+    }
+
+    const handleFinish = (values) => {
+        debugger;
     }
 
     return (
@@ -129,10 +169,13 @@ const SgiMotifPushButtonPage = () => {
                 wrapperCol={{ span: 18, }}
                 layout="horizontal"
                 autoComplete="off"
+                // onFieldsChange={handleFieldsChange}
+                // onValuesChange={handleValuesChange}
+                onFinish={handleFinish}
             >
                 <Form.Item style={{float: 'right'}}>
                     <Flex gap="small" wrap>
-                        <Button type="primary">Save</Button>
+                        <Button type="primary" htmlType="submit">Save</Button>
                         <Button>Close</Button>
                     </Flex>
                 </Form.Item>
@@ -140,11 +183,11 @@ const SgiMotifPushButtonPage = () => {
                 <Divider/>
 
                 <Form.Item label="Instance Name" name="instanceName" >
-                    <Input placeholder='widgetClass.instanceName' onChange={alert('instanceName')}/>
+                    <Input placeholder='widgetClass.instanceName' onChange={handleChange}/>
                 </Form.Item>
 
                 <Form.Item label="Class Name" name="className" >
-                    <Input  placeholder='widgetClass.className'/>
+                    <Input  placeholder='widgetClass.className' onChange={handleChange}/>
                 </Form.Item>                
 
                 <Divider/>

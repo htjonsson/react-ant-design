@@ -1,29 +1,22 @@
-import { Layout, version, Dropdown, Button, Space, } from 'antd';
+import { Layout, version, Dropdown, Button, Space, Card, Image, } from 'antd';
 import { Link } from "react-router-dom";
 
 const { Header, Content } = Layout;
 
 const items = [
     {
-        key: 'dash',
-        label: <Link to="/dash">Dashboard</Link>,
+        label: "Query",
+        url: "/query"
     },
     {
-        key: 'query',
-        label: (
-            <Link to="/query">Query</Link>
-        ),
+        label: "Development",
+        url: "/devel"
     },
     {
-        key: 'devel',
-        label: <Link to="/devel">Development</Link>,
-    },
-    {
-        key: 'sgi-motif',
-        label: <Link to="/sgi-motif">SGI Motif</Link>,
-    },    
-];
-
+        label: "SGI Motif",
+        url: "/sgi-motif"
+    }
+]
 
 const layoutStyle = {
 };
@@ -46,29 +39,21 @@ const contentStyle = {
 };
 
 const DashboardApp = () => {
-    const onClick = (e) => {
-        console.log('click ', e);
-    };
-
     return (
         <Layout style={layoutStyle}>
             <Header style={headerStyle}>
                 REACT-ANT-DESIGN - {version}
             </Header>
             <Content style={contentStyle}>
-                <div>Dashboard</div>
-                <Dropdown 
-                    menu={{ 
-                        items,
-                        onClick
-                    }} 
-                    placement="bottomRight"
-                    arrow={{ pointAtCenter: true, }}
-                >
-                    <Space style={{ paddingLeft: 30, }}>
-                        <Button onClick={(e) => {alert('clicked')}}>Apps</Button>
-                    </Space>
-                </Dropdown>
+                <Space direction="horizontal" size={16}>
+                    {items.map(item => {
+                        return (
+                            <Card size="small" style={{ width: 300, }} >
+                                <Link to={item.url}>{item.label}</Link>
+                            </Card>
+                        );
+                    })}
+                </Space>
             </Content>
         </Layout>
     )

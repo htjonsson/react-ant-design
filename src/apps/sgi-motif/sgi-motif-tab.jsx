@@ -6,6 +6,7 @@ import SgiVkWindowPage from './pages/sgi-vk-window-page';
 import SgiVkDialogPage from './pages/sgi-vk-dialog-page';
 import SgiMotifPushButtonPage from './pages/sgi-motif-push-button-page'
 import SgiClassInformationPage from './pages/sgi-class-information-page'
+import SgiRapidAppPage from './pages/sgi-rapid-app-page'
 
 const tabs = [
     {
@@ -32,7 +33,12 @@ const tabs = [
         key: 'ClassInformation',
         label: 'Class Information',
         children: <SgiClassInformationPage />,
-    },              
+    },
+    {
+        key: 'RapidApp',
+        label: 'RapidApp',
+        children: <SgiRapidAppPage />,
+    },                      
 ];
 
 const contentStyle = {
