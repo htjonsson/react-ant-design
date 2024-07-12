@@ -7,38 +7,44 @@ import SgiVkDialogPage from './pages/sgi-vk-dialog-page';
 import SgiMotifPushButtonPage from './pages/sgi-motif-push-button-page'
 import SgiClassInformationPage from './pages/sgi-class-information-page'
 import SgiRapidAppPage from './pages/sgi-rapid-app-page'
+import OutlinePage from './pages/outline-page';
 
 const tabs = [
     {
-        key: 'VkSimpleWindow',
+        key: 'vk_simple_window',
         label: 'VkSimpleWindow',
         children: <SgiVkSimpleWindowPage />
     },
     {
-        key: 'VkWindow',
+        key: 'vk_window',
         label: 'VkWindow',
         children: <SgiVkWindowPage />
     },
     {
-        key: 'VkDialog',
+        key: 'vk_dialog',
         label: 'VkDialog',
         children: <SgiVkDialogPage />
     },    
     {
-        key: 'XmPushButton',
+        key: 'xm_push_button',
         label: 'XmPushButton',
         children: <SgiMotifPushButtonPage />,
     },
     {
-        key: 'ClassInformation',
+        key: 'class_information',
         label: 'Class Information',
         children: <SgiClassInformationPage />,
     },
     {
-        key: 'RapidApp',
+        key: 'rapid_app',
         label: 'RapidApp',
         children: <SgiRapidAppPage />,
-    },                      
+    },
+    {
+        key: 'outline',
+        label: 'Outline',
+        children: <OutlinePage />,
+    },                             
 ];
 
 const contentStyle = {
