@@ -16,3 +16,5 @@ https://legacy.reactjs.org/docs/typechecking-with-proptypes.html<br/>
 
 ICONS <br/>
 https://github.com/jujum4n/sgi-enhanced/tree/master <br/>
+
+https://github.com/googlearchive/code-prettify?tab=readme-ov-file
