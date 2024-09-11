@@ -1,0 +1,8 @@
+{
+	"list": {
+		"title": ["No.","Date","Name","Amount","On-Order","Delivered","Intrastat","Prined","Emailed","Posted","Email or Print","View","Due Date"],
+		"actions": ["New","Edit","Duplicate","Place orders","Receive deliveries","Recived note","Amount deliveries","Update ledgers","Recurring items","Intrastat Return","Quick print","Print","Email","View on OneDrive","Delete","Swap","Clear","Print list","Send to Excel", "Labels","Reports"]
+	},
+	"modules": ["Home","Home centre","Customers","Quotations","Sales orders","Invoices and credits","Suppliers","Purchase orders","Product and services","Bank accounts","Nominal codes","VAT",
+		"Transactions","Fixed assets","Departments","Projects","Diary"]
+}
