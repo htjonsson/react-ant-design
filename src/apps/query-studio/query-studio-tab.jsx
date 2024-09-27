@@ -1,8 +1,10 @@
 import React from 'react';
 import { Tabs, Tree, Typography, Empty, } from 'antd';
+
 import QueryStudioDatasource from './query-studio-datasource';
 import QueryStudioDragNDrop from './query-studio-drag-n-drop';
 import QueryStudioMaps from './query-studio-maps';
+import QueryStudioSyntax from './query-studio-syntax';
 
 const tabs = [
     {
@@ -28,7 +30,7 @@ const tabs = [
     {
         key: '5',
         label: 'Advanced',
-        children: 'Content of Tab Pane 4',
+        children: <QueryStudioSyntax/>,
     },
     {
         key: '6',

@@ -10,7 +10,7 @@ const items = [
     },
     {
         label: "Development",
-        url: "/devel"
+        url: "/development"
     },
     {
         label: "SGI Motif",

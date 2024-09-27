@@ -12,7 +12,7 @@ const App = () => {
                 <Route path='/' element={<DashboardApp />} />
                 <Route path='/dash' element={<DashboardApp />} />
                 <Route path='/query' element={<QueryStudioApp />} />
-                <Route path='/devel' element={<DevelopmentApp />} />
+                <Route path='/development' element={<DevelopmentApp />} />
                 <Route path='/sgi-motif' element={<SgiMotifApp />} />
             </Routes>
         </BrowserRouter>
