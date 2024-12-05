@@ -15,6 +15,7 @@
     "axios": "^1.6.8",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
+    "react-ant-design": "file:",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-syntax-highlighter": "^15.5.0",

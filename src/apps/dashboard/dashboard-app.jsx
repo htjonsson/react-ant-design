@@ -15,7 +15,11 @@ const items = [
     {
         label: "SGI Motif",
         url: "/sgi-motif"
-    }
+    },
+    {
+        label: "Form",
+        url: "/form"
+    }    
 ]
 
 const layoutStyle = {

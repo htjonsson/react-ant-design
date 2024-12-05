@@ -1,23 +1,19 @@
 import React from 'react';
 import { Tabs, } from 'antd';
 
-import QueryStudioDatasource from './query-studio-datasource';
-import QueryStudioDragNDrop from './query-studio-drag-n-drop';
-import QueryStudioMaps from './query-studio-maps';
-import QueryStudioSyntax from './query-studio-syntax';
-import QueryStudioVariable from './query-studio-variable';
-import QueryStudioSchedule from './query-studio-schedule';
+import FormBuilderTable from './form-builder-table';
+import FormBuilderSyntaxHighlighter from './form-builder-syntax-highlighter';
 
 const tabs = [
     {
         key: '1',
-        label: 'Data Source',
-        children: <QueryStudioDatasource/>
+        label: 'Design',
+        children: <FormBuilderTable/> ,
     },
     {
         key: '2',
-        label: 'Variables',
-        children: <QueryStudioVariable/>,
+        label: 'Code Example',
+        children: <FormBuilderSyntaxHighlighter/> ,
     },
     {
         key: '3',
@@ -27,22 +23,22 @@ const tabs = [
     {
         key: '4',
         label: 'Maps',
-        children: <QueryStudioMaps/>,
+        children: 'Content of Filter Tab Pane' ,
     },
     {
         key: '5',
         label: 'Advanced',
-        children: <QueryStudioSyntax/>,
+        children: 'Content of Filter Tab Pane' ,
     },
     {
         key: '6',
         label: 'Schedule',
-        children: <QueryStudioSchedule/>,
+        children: 'Content of Filter Tab Pane' ,
     },  
     {
         key: '7',
-        label: 'Drag And Drop',
-        children: <QueryStudioDragNDrop/>,
+        label: 'History',
+        children: 'Content of Filter Tab Pane' ,
     },              
 ];
 
@@ -56,7 +52,7 @@ const contentStyle = {
     paddingLeft: '40px'
 };
 
-const QueryStudioTab = () => {
+const FormBuilderTab = () => {
 
     const onChange = (key) => {
         console.log(key);
@@ -69,4 +65,4 @@ const QueryStudioTab = () => {
     )
 }
 
-export default QueryStudioTab
+export default FormBuilderTab
